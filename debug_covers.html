@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Debug de Capas</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+        .gallery { display: flex; flex-wrap: wrap; gap: 20px; }
+        .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 250px; text-align: center; }
+        .card img { max-width: 100%; height: auto; display: block; margin: 0 auto 15px; border: 1px solid #ddd; }
+        .filename { font-weight: bold; color: #333; word-break: break-all; margin-bottom: 10px; font-size: 1.1em; }
+        .instruction { color: #666; font-size: 0.9em; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Galeria de Identificação</h1>
+    <p>Por favor, olhe para cada imagem abaixo e anote qual livro ela representa.</p>
+    <div class="gallery">
+        <div class="card">
+            <div class="filename">cover-6.jpg</div>
+            <img src="assets/cover-6.jpg">
+        </div>
+        <div class="card">
+            <div class="filename">cover-alasca.jpg</div>
+            <img src="assets/cover-alasca.jpg">
+        </div>
+        <div class="card">
+            <div class="filename">cover-flores.jpg</div>
+            <img src="assets/cover-flores.jpg">
+        </div>
+        <div class="card">
+            <div class="filename">cover-prometa-real.jpg</div>
+            <img src="assets/cover-prometa-real.jpg">
+        </div>
+        <div class="card">
+            <div class="filename">cover-quarta-asa-old.jpg</div>
+            <img src="assets/cover-quarta-asa-old.jpg">
+        </div>
+        <div class="card">
+            <div class="filename">cover-verity-old.jpg</div>
+            <img src="assets/cover-verity-old.jpg">
+        </div>
+    </div>
+</body>
+</html>

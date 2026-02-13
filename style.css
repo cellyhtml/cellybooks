@@ -217,6 +217,17 @@ button:focus {
     padding: 0 4vw;
 }
 
+.hero-author {
+    font-family: var(--f-sans);
+    font-size: 0.85rem;
+    color: var(--c-caramel);
+    margin-top: 4rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    display: inline-block;
+}
+
 .hero-sub {
     margin-top: 4rem;
     display: flex;
@@ -1092,4 +1103,104 @@ button:focus {
     font-size: 1.5rem;
     text-align: right;
     color: var(--c-caramel);
+}
+
+/* --- Mood Recommendation Pages --- */
+.post-header-visuals {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background-color: var(--c-brown);
+    color: var(--c-beige);
+}
+
+.recommendations-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+}
+
+.book-recommendation {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(200, 155, 106, 0.2);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.book-recommendation:hover {
+    transform: translateY(-5px);
+    border-color: var(--c-caramel);
+}
+
+.book-cover-img {
+    width: 140px;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.book-recommendation:hover .book-cover-img {
+    transform: scale(1.05);
+}
+
+.rec-info {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .book-recommendation {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .book-cover-img {
+        width: 160px;
+    }
+}
+
+.rec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--c-gold);
+    margin-bottom: 0.5rem;
+}
+
+.rec-author {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--c-skin);
+    margin-bottom: 1rem;
+}
+
+.rec-rating {
+    color: var(--c-gold);
+    margin-bottom: 1rem;
+    letter-spacing: 0.2em;
+}
+
+.rec-summary {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--c-beige);
+}
+
+.mood-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
 }
