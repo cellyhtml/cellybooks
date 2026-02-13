@@ -602,49 +602,35 @@ button:focus {
 
 /* Specific Covers */
 .cover-addie {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    color: #e0e0e0;
+    background: url('assets/cover-addie-real.jpg') no-repeat center center/cover;
+    color: transparent; /* Hide text if present */
 }
 
 .decoration-stars {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    color: var(--c-caramel);
-    letter-spacing: 0.5rem;
+    display: none; /* Hide generic decor */
 }
 
 .cover-normal {
-    background: #e6ded6;
-    color: #2c2c2c;
+    background: url('assets/cover-normal-real.jpg') no-repeat center center/cover;
+    color: transparent;
     border: none;
 }
 
 .cover-normal .book-content {
-    border: 1px solid #2c2c2c;
-    height: 90%;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: none; /* Hide internal content since image has it */
 }
 
 .decoration-line {
-    width: 2px;
-    height: 40px;
-    background: #2c2c2c;
-    margin-top: 1rem;
+    display: none;
 }
 
 .cover-perks {
-    background: #4a5d4f;
-    color: #f0f0f0;
+    background: url('assets/cover-vantagens-real.jpg') no-repeat center center/cover;
+    color: transparent;
 }
 
 .decoration-mix {
-    margin-top: 1rem;
-    font-size: 2rem;
-    font-weight: 300;
+    display: none;
 }
 
 /* Book Content Generic */
