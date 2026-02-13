@@ -145,18 +145,24 @@ button:focus {
 }
 
 /* Navigation */
+/* Navigation Responsive */
 .fixed-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 4vw;
+    padding: 1.5rem 4vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-    transition: color 0.3s ease;
-    /* mix-blend-mode removed for explicit control */
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.fixed-nav.scrolled {
+    background: rgba(31, 31, 31, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 4vw;
 }
 
 .fixed-nav.inverted .logo-mark,
@@ -167,44 +173,83 @@ button:focus {
 
 .logo-mark {
     font-family: var(--f-display);
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-decoration: none;
     color: var(--c-beige);
-    transition: color 0.3s ease;
+    position: relative;
+    z-index: 1001;
 }
 
+/* Mobile Menu Default (Hidden) */
 .nav-links {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--c-brown);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+}
+
+.nav-links.active {
+    transform: translateY(0);
 }
 
 .nav-links a {
-    margin-left: 3rem;
+    font-size: 2rem;
     text-decoration: none;
     color: var(--c-beige);
-    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    transition: color 0.3s ease;
+    margin: 0;
 }
 
+/* Toggle Button */
 .menu-toggle {
     background: none;
     border: none;
     color: var(--c-beige);
+    font-family: var(--f-sans);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: color 0.3s ease;
+    z-index: 1001; /* Above overlay */
+    position: relative;
 }
 
+/* Desktop Overrides */
 @media (min-width: 768px) {
     .nav-links {
-        display: block;
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        display: flex;
+        flex-direction: row;
+        transform: none;
+        gap: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        margin-left: 3rem;
     }
 
     .menu-toggle {
         display: none;
+    }
+    
+    .logo-mark {
+        font-size: 2rem;
     }
 }
 

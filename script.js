@@ -157,4 +157,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Remove loading class
     document.body.classList.remove('is-loading');
+
+    // --- Mobile Menu Logic ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            const isActive = navLinks.classList.toggle('active');
+            
+            if (isActive) {
+                menuToggle.textContent = 'Fechar';
+                document.body.style.overflow = 'hidden'; // Lock scroll
+            } else {
+                menuToggle.textContent = 'Menu';
+                document.body.style.overflow = ''; // Unlock scroll
+            }
+        });
+
+        // Close menu when link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.textContent = 'Menu';
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
 });
